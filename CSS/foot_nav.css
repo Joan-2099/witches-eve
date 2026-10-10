@@ -1,0 +1,259 @@
+/*navigation bar */
+.navclass{
+    display: flex;
+    gap: 10px;
+    margin-bottom: 30px;
+    width: 100%;
+    background-color: rgb(137, 50, 195);
+    justify-content: flex-end;
+    padding: 10px;
+}
+.navbar{
+    padding: 10px;
+
+}
+.navbar ul{
+    display: flex;
+    list-style: none;
+    text-decoration: none;
+    gap: 10px;
+}
+
+.navbar a{ 
+    color: white;
+    padding: 10px;
+    border-radius:2px;
+}
+
+.navbar a:hover{
+    background-color: rgb(238, 213, 251);
+    color: black;
+}
+
+.login_reg{
+    padding: 10px; 
+}
+.login_reg a{
+    color: white;
+    margin-top: 10px;
+    border-radius: 60px;
+}
+.login_reg a:hover{
+    color: black;
+}
+
+/* FOOTER */
+footer {
+    position: relative;
+    background: rgb(132, 44, 167);
+    color: #F9F6F0;
+    overflow: hidden;
+    font-family: 'Manrope', sans-serif;
+}
+
+
+/* MAIN INFO AREA*/ 
+
+.footer-main {
+    background: #F9F6F0;
+    color: #e7d2e7;
+    padding: 85px 6vw;
+}
+
+.footer-main-grid {
+    max-width: 1380px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns:
+        minmax(250px, 1.7fr)
+        minmax(150px, 1fr)
+        minmax(230px, 1.2fr)
+        minmax(170px, 1fr);
+    gap: 70px;
+}
+
+/* BRAND*/
+.footer-logo {
+    display: inline-block;
+    margin-bottom: 30px;
+}
+
+.footer-logo img {
+    display: block;
+    width: 145px;
+    height: auto;
+}
+
+.footer-brand-description {
+    max-width: 330px;
+    margin: 0 0 30px;
+    font-size: 15px;
+    line-height: 1.75;
+    color: #e9f1e9;
+}
+
+.footer-location-tag {
+    display: flex;
+    align-items: center;
+    gap: 9px;
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: #eceeec;
+}
+
+
+
+
+/* COLUMN HEADINGS */
+
+.footer-column-label {
+    display: block;
+    margin-top: 10px;
+    margin-bottom: 18px;
+    font-size: 11px;
+    font-weight: 800;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+    color: #f8fef6;
+}
+
+
+/* NAVIGATION */
+
+.footer-nav {
+    display: flex;
+    flex-direction: column;
+    gap: 13px;
+}
+
+.footer-nav a {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    color: #ffffff;
+    text-decoration: none;
+    font-size: 15px;
+    font-weight: 600;
+    transition: color 0.25s ease,padding-left 0.25s ease;
+}
+
+/* CONTACT */
+
+.footer-contact-link {
+    display: block;
+    margin-bottom: 10px;
+    color: #ffffff;
+    text-decoration: none;
+    font-size: 15px;
+    font-weight: 600;
+    transition: color 0.25s ease;
+}
+
+.footer-contact-link:hover {
+    color: #fffbfa;
+}
+
+.footer-address {
+    display: flex;
+    gap: 12px;
+    margin-top: 27px;
+    color: #ffffff;
+    font-size: 13px;
+    line-height: 1.7;
+}
+
+.footer-address i {
+    margin-top: 4px;
+    color: #e0efe1;
+}
+
+
+/* SOCIAL*/
+
+.footer-social-heading {
+    margin-bottom: 15px;
+    margin-top: 10px;
+    font-size: 11px;
+    font-weight: 800;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: #fdfffd;
+}
+
+.footer-socials {
+    display: flex;
+    gap: 9px;
+}
+
+.footer-socials a {
+    width: 39px;
+    height: 39px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 1px solid rgba(42, 79, 43, 0.18);
+    border-radius: 50%;
+    color: #ffffff;
+    text-decoration: none;
+    transition:
+        background 0.25s ease,
+        color 0.25s ease,
+        transform 0.25s ease;
+}
+
+.footer-socials a:hover {
+    background: #340780;
+    color: #F9F6F0;
+    transform: translateY(-3px);
+}
+
+
+/*  GIANT TITLE */
+
+.footer-title{
+    padding: 0 4vw;
+    background: #F9F6F0;
+    overflow: hidden;
+}
+
+.footer-title-word {
+    margin-left: -0.045em;
+    font-size: clamp(80px, 16.5vw, 280px);
+    line-height: 0.72;
+    letter-spacing: -0.085em;
+    font-weight: 800;
+    color: #331c64;
+    white-space: nowrap;
+    user-select: none;
+}
+
+
+/* BOTTOM BAR */
+.footer-bottom {
+    padding: 19px 6vw;
+    background: #F9F6F0;
+    border-top: 1px solid rgba(42, 79, 43, 0.10);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    color: #672892;
+    font-size: 11px;
+}
+
+.footer-bottom-links {
+    display: flex;
+    gap: 25px;
+}
+
+.footer-bottom a {
+    color: inherit;
+    text-decoration: none;
+    color: #0a2b16;
+    transition: color 0.2s ease;
+}
+
+
+

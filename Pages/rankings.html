@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rankings</title>
+    <link rel="stylesheet" href="../CSS/foot_nav.css">
+    <link rel="stylesheet" href="../CSS/ranking.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+</head>
+<body>
+    <div class="navclass">
+            <nav class="navbar">
+                <ul>
+                    <li> <a href="">Home</a></li>
+                    <li><a href="">About</a></li>
+                    <li><a href="rankings.html">Rankings</a></li>
+                
+                </ul>      
+            </nav>
+            <div class="login_reg">
+                <a href="">
+                    <i class="fa-solid fa-user"></i>
+                </a>
+            </div>
+            <nav class="navbar">
+                <ul>
+                    <li><a href="login.html">Login</a></li>
+                </ul>
+            </nav>
+    </div>
+
+    <main>
+       <!--Ranking head-->
+        <div class="rankings-container">
+
+            <div class="ranking-heading">
+
+                <span class="ranking-kicker">
+                    WITCHES' EVE
+                </span>
+                <h1>Leaderboard</h1>
+                <p>Who rules the night?</p>
+
+            </div>
+
+             <!--Ranking table-->
+            <div class="table-wrapper">
+
+                <table class="leaderboard">
+                    <thead>
+                        <tr>
+                            <th>Rank</th>
+                            <th>Player</th>
+                            <th>Score</th>
+                            <th>Level</th>
+                        </tr>
+                    </thead>
+                    <tbody id="leaderboard-body">
+                    </tbody>
+                </table>
+
+            </div>
+
+        </div>
+    </main>
+
+    <footer>
+        <div class="footer-main-grid">
+
+            <!--Logo -->
+            <div class="footer-brand">
+                <a href="" class="footer-logo"></a>
+            </div>
+
+
+            <!-- Navigation-->
+            <div class="footer-column">
+                <span class="footer-column-label">Explore</span>
+
+                <nav class="footer-nav">
+                    <a href="">Home</a>
+                    <a href="">About us</a>
+                    <a href="{% url 'services' %}">Login</a>
+                </nav>
+
+            </div>
+
+
+            <!-- Contact-->
+            <div class="footer-column footer-contact">
+                <span class="footer-column-label">
+                    Get in touch
+                </span>
+
+                <p>+230 5800000</p>
+                <p>@info.witcheseve.com</p>
+
+                <div class="footer-address">
+                    <i class="fa-solid fa-location-dot"></i>
+                    <span>
+                        Dodo mall,<br>
+                        Coastal Road,<br>
+                        Flic en Flac, Mauritius
+                    </span>
+                </div>
+            </div>
+
+
+            <!--Social-->
+            <div class="footer-column footer-last">
+
+                <div class="footer-social-heading">
+                        Follow Witches' Eve
+                </div>
+
+                <div class="footer-socials">
+                    <a href="#" aria-label="Tiktok">
+                        <i class="fa-brands fa-tiktok"></i>
+                    </a>
+
+                    <a href="#" aria-label="Instagram">
+                        <i class="fa-brands fa-instagram"></i>
+                    </a>
+
+                    <a href="#" aria-label="X">
+                        <i class="fa-brands fa-square-x-twitter"></i>
+                    </a>
+                </div>
+
+            </div>
+
+        </div>
+
+        <!--GIANT title-->
+        <section class="footer-title">
+            <div class="footer-title-word">
+                WITCHES' EVE
+            </div>
+        </section>
+
+
+        <!-- Bottom -->
+        <div class="footer-bottom">
+            <span>
+                © 2026 Witches' Eve. All rights reserved.
+            </span>
+        </div>
+    </footer>
+    <script src="../JS/rankings.js"></script>
+</body>
+</html>

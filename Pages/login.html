@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+    <link rel="stylesheet" href="../CSS/login.css">
+    <link rel="stylesheet" href="../CSS/foot_nav.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+</head>
+<body>
+    <div class="navclass">
+            <nav class="navbar">
+                <ul>
+                    <li> <a href="">Home</a></li>
+                    <li><a href="">About</a></li>
+                    <li><a href="rankings.html">Rankings</a></li>
+                
+                </ul>      
+            </nav>
+            <div class="login_reg">
+                <a href="">
+                    <i class="fa-solid fa-user"></i>
+                </a>
+            </div>
+            <nav class="navbar">
+                <ul>
+                    <li><a href="#" id="logoutLink">Logout</a></li>
+                </ul>
+            </nav>
+        </div>
+    <main>
+        <div class="wrapper">
+            <!-- Login -->
+            <div class="form-box login">
+                <form action="#" id="loginForm" novalidate>
+                    <h1>Login</h1>
+                    <div class="entry">
+                        <input type="email" name="email" id="login-email-input"  placeholder="Email"autocomplete="email">
+                        <i class="fa-solid fa-user"></i>
+                    </div>
+
+                    <div class="entry">
+                        <input type="password" name="password" id="password-input" placeholder="Password" autocomplete="current-password">
+                        <i class="fa-solid fa-lock"></i>
+                    </div>
+
+                    <p id="login-message" role="status" aria-live="polite"></p>
+
+                    <button type="Submit" class="logbtn">Login</button>
+
+
+                    <div class="forgot_pass">
+                        <a href="#">Forgot Password</a>
+                    </div>
+                </form>
+            </div>
+
+            <!--Register-->
+            <div class="form-box register">
+                
+                <form id="registerForm" novalidate>
+                    <h1>Sign Up</h1>
+                    <div class="entry">
+                        <input type="text" name="name" id="register-name-input" placeholder="Name">
+                        <i class="fa-solid fa-user"></i>
+                    </div>
+                    <div class="entry">
+                        <input type="email" name="email" id="email-input" placeholder="Email" autocomplete="email">
+                        <i class="fa-solid fa-at"></i>
+                    </div>
+
+                    <div class="entry">
+                        <input type="password" name="password" id="register-password-input" placeholder="Password" autocomplete="new-password">
+                        <i class="fa-solid fa-lock"></i>
+                    </div>
+                    <div class="entry">
+                        <input type="password" name="confirm_password" id="confirm_password-input" placeholder="Confirm Password" autocomplete="new-password"> 
+                        <i class="fa-solid fa-lock"></i>
+                    </div>
+
+                    <p id="register-message" role="status" aria-live="polite"></p>
+
+                    <button type="Submit" class="regbtn">Sign Up</button>
+                    
+                </form>
+
+            </div>
+
+
+            <!--Toggle Box-->
+            <div class="toggle-box">
+                <!--Toggle left-->
+                <div class="toggle-panel toggle-left">
+                    <h1>Hello, Welcome!</h1>
+                    <p>Don't have an account?</p>
+                    <button class="btn register-btn"> Sign Up</button>
+                </div>
+
+                <!--Toggle right-->
+                <div class="toggle-panel toggle-right">
+                    <h1>Welcome back !</h1>
+                    <p>Already have an account?</p>
+                    <button class="btn login-btn">login</button>
+                </div>
+
+            </div>    
+        </div>
+    </main>
+
+    <footer>
+
+        <div class="footer-main-grid">
+            <!-- BRAND -->
+            <div class="footer-brand">
+                <a href="" class="footer-logo">
+                    
+                </a>
+            </div>
+
+
+            <!-- NAV -->
+            <div class="footer-column">
+
+                <span class="footer-column-label">Explore</span>
+                <nav class="footer-nav">
+                    <a href="">Home</a>
+                    <a href="">About us</a>
+                    <a href="login.html">
+                        Login
+                    </a>
+                </nav>
+
+            </div>
+
+
+            <!-- CONTACT -->
+            <div class="footer-column footer-contact">
+                <span class="footer-column-label">
+                    Get in touch
+                </span>
+
+                <p>+230 5800000</p>
+                <p>@info.witcheseve.com</p>
+
+                <div class="footer-address">
+                    <i class="fa-solid fa-location-dot"></i>
+                    <span>
+                        Dodo mall,<br>
+                        Coastal Road,<br>
+                        Flic en Flac, Mauritius
+                    </span>
+                </div>
+            </div>
+
+
+            <!--SOCIAL -->
+            <div class="footer-column footer-last">
+
+                <div class="footer-social-heading">
+                        Follow Witches' Eve
+                </div>
+
+                <div class="footer-socials">
+                    <a href="#" aria-label="Tiktok">
+                        <i class="fa-brands fa-tiktok"></i>
+                    </a>
+
+                    <a href="#" aria-label="Instagram">
+                        <i class="fa-brands fa-instagram"></i>
+                    </a>
+
+                    <a href="#" aria-label="X">
+                        <i class="fa-brands fa-square-x-twitter"></i>
+                    </a>
+                </div>
+
+            </div>
+
+        </div>
+
+        <!--GIANT TITLE-->
+        <section class="footer-title">
+            <div class="footer-title-word">
+                WITCHES' EVE
+            </div>
+        </section>
+
+
+        <!-- BOTTOM BAR -->
+        <div class="footer-bottom">
+            <span>
+                © 2026 Witches' Eve. All rights reserved.
+            </span>
+        </div>
+
+    </footer>
+        
+    <script src="../JS/login.js"></script>
+    <script type="module" src="../JS/forms-auth.js"></script>
+</body>
+</html>

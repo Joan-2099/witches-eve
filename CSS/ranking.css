@@ -1,0 +1,287 @@
+* {
+    margin: 0;
+    padding: 0;
+    text-decoration: none;
+    list-style: none;
+    box-sizing: border-box;
+}
+
+
+body {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    background-color: rgb(40, 15, 97);
+}
+
+
+main {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+
+/* Ranking Conatiner*/
+.rankings-container {
+    width: 90%;
+    max-width: 1000px;
+    margin: 40px auto;
+    color: white;
+}
+
+
+/* Heading */
+.ranking-heading {
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.ranking-kicker {
+    color: rgb(193, 90, 234);
+    font-size: 13px;
+    font-weight: bold;
+    letter-spacing: 4px;
+}
+
+.ranking-heading h1 {
+    font-size: 45px;
+    margin: 5px 0;
+}
+
+.ranking-heading p {
+    color: rgb(210, 190, 225);
+    font-size: 16px;
+}
+
+
+/* Table container */
+.table-wrapper {
+    width: 100%;
+    padding: 20px;
+    background-color: rgba(20, 8, 45, 0.7);
+    border: 1px solid rgba(193, 90, 234, 0.35);
+    border-radius: 20px;
+    box-shadow:
+        0 15px 40px rgba(0, 0, 0, 0.35),
+        0 0 25px rgba(193, 90, 234, 0.08);
+    overflow: visible;
+}
+
+
+/* Table */
+.leaderboard {
+    width: 100%;
+    border-collapse: separate;
+
+    border-spacing: 0 10px;
+}
+
+
+/* Table Hedings */
+.leaderboard th {
+    color: rgb(200, 180, 215);
+    padding: 10px 15px;
+    font-size: 12px;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    text-align: left;
+}
+
+
+/* Table rows*/
+.leaderboard tbody tr {
+    background-color: rgba(255, 255, 255, 0.05);
+    transition:
+        transform 0.2s ease,
+        background-color 0.2s ease,
+        box-shadow 0.2s ease;
+}
+
+
+.leaderboard tbody tr:hover {
+    transform: translateY(-3px);
+    background-color: rgba(193, 90, 234, 0.14);
+    box-shadow:
+        0 8px 20px rgba(0, 0, 0, 0.25);
+}
+
+
+/*  TABLE CELLS */
+.leaderboard td {
+    padding: 17px 15px;
+    color: white;
+    text-align: left;
+}
+
+
+.leaderboard td:first-child {
+    border-radius: 15px 0 0 15px;
+}
+
+
+.leaderboard td:last-child {
+    border-radius: 0 15px 15px 0;
+}
+
+
+/*  RANK */
+.rank-badge {
+
+    width: 38px;
+    height: 38px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    background-color: rgba(193, 90, 234, 0.15);
+    border: 1px solid rgba(193, 90, 234, 0.4);
+    font-weight: bold;
+}
+
+
+/* Gold */
+.rank-one .rank-badge {
+
+    background: #c9972b;
+    color: #3b2350;
+    border: none;
+}
+
+
+/* Silver*/
+.rank-two .rank-badge {
+    background:#999999;
+    color: #33213d;
+    border: none;
+}
+
+
+/* BRONZE */
+.rank-three .rank-badge {
+    background:#a96538;
+    color: #321d14;
+    border: none;
+}
+
+
+/* PLAYER*/
+.player-cell {
+    position: relative;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+
+.avatar {
+    width: 38px;
+    height: 38px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    background: linear-gradient(
+        135deg,
+        rgb(193, 90, 234),
+        rgb(116, 55, 180)
+    );
+    color: white;
+    font-weight: bold;
+}
+
+
+.player-name {
+    font-weight: 600;
+    font-size: 15px;
+}
+
+.winner-trophy {
+    width: 80px;
+    height: 80px;
+    object-fit: contain;
+    margin-left: 5px;
+    margin-right: 5px;
+    position: relative;
+    top: 0;
+    z-index: 2;
+}
+
+/* Score */
+.score-cell {
+    min-width: 250px;
+}
+
+.score-info {
+    margin-bottom: 7px;
+}
+
+.score-info span {
+    font-size: 16px;
+    font-weight: bold;
+}
+
+
+/* SCORE IMPACT BAR */
+.impact-bar {
+    width: 100%;
+    height: 7px;
+    background-color: rgba(255, 255, 255, 0.08);
+    border-radius: 20px;
+    overflow: hidden;
+}
+
+
+.impact-fill {
+    height: 100%;
+    border-radius: 20px;
+    background: linear-gradient(
+        90deg,
+        rgb(116, 55, 180),
+        rgb(193, 90, 234)
+    );
+
+    box-shadow:
+        0 0 10px rgba(193, 90, 234, 0.6);
+    transition: width 0.6s ease;
+}
+
+
+/* Level */
+.level-badge {
+    display: inline-block;
+    padding: 6px 12px;
+    border-radius: 20px;
+    background-color: rgba(193, 90, 234, 0.12);
+    border: 1px solid rgba(193, 90, 234, 0.35);
+    color: rgb(220, 190, 235);
+    font-size: 12px;
+    font-weight: bold;
+    letter-spacing: 1px;
+}
+
+
+/*  First place */
+.rank-one {
+    background:linear-gradient( 90deg,
+            rgba(193, 90, 234, 0.18),
+            rgba(193, 90, 234, 0.05)
+        );
+    position: relative;
+}
+
+
+.rank-one .player-name {
+    font-size: 17px;
+}
+
+
+.rank-one .impact-fill {
+    background: linear-gradient(
+        90deg,
+        rgb(193, 90, 234),
+        rgb(239, 155, 255)
+    );
+}
