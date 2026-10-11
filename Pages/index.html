@@ -5,23 +5,31 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <link rel="stylesheet" href="../CSS/index.css">
+    <link rel="stylesheet" href="../CSS/foot_nav.css">
 </head>
 <body>
-    <div class ="page_head">
-        <div class = "Logo">
-
-        </div>
-        <nav class=" navbar">
-            <ul>
-                <li><a href="about.html">About</a></li>
-                <li><a href="ranking.html">Ranking</a></li>
-                <li><a href="login.html">Sign In</a></li>
-                <li><a href="register.html">Register</a></li>
-            </ul>
-        </nav>
-
+    <div class="navclass">
+            <nav class="navbar">
+                <ul>
+                    <li> <a href="index.html">Home</a></li>
+                    <li><a href="about.html">About</a></li>
+                    <li><a href="rankings.html">Rankings</a></li>
+                
+                </ul>      
+            </nav>
+            <div class="login_reg">
+                <a href="login.html" id="profileLink" aria-label="View your profile">
+                    <i class="fa-solid fa-user"></i>
+                </a>
+            </div>
+            <nav class="navbar">
+                <ul>
+                    <li><a href="login.html" id="logoutLink">Logout</a></li>
+                </ul>
+            </nav>
     </div>
-
+    
+    <main>
     <div class="intro_text">
         <h3></h3>
         <p>
@@ -43,6 +51,8 @@
 
         </div>
     </div>
+
+    </main>
 
     <script src="../JS/index.js"></script>
 </body>

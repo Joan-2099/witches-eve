@@ -1,31 +1,35 @@
 
-import { getUsers, getCurrentUser } from "./auth.js";
+import {
+    getUsers,
+    getCurrentUser,
+    logoutUser
+} from "./auth.js";
 
-// Check if logged in
+// Check whether the user is logged in
 const currentUser = getCurrentUser();
 
 if (!currentUser) {
-    // Change this if your login page has a different filename
     window.location.replace("login.html");
 } else {
     displayProfile();
 }
 
-
-//Find the current user's records
+// Find and display the current user's information
 function displayProfile() {
     const users = getUsers();
 
-    const player = users.find(user => user.id === currentUser.id);
+    const player = users.find(
+        user => user.id === currentUser.id
+    );
 
-    // The session may exist even if the user record was deleted
+    // Handle deleted or missing accounts
     if (!player) {
-        sessionStorage.removeItem("witchesEveCurrentUser");
+        logoutUser();
         window.location.replace("login.html");
         return;
     }
 
-    //Display the player's personal information
+    // Personal information
     document.getElementById("profileUsername").textContent =
         player.username;
 
@@ -35,13 +39,13 @@ function displayProfile() {
     document.getElementById("profileBio").textContent =
         player.bio || "No bio added yet.";
 
-    // Display the profile picture, if one has been saved
+    // Profile picture
     if (player.profilePicture) {
         document.getElementById("profilePicture").src =
             player.profilePicture;
     }
 
-    // Display game statistics
+    // Game statistics
     const scores = Array.isArray(player.scores)
         ? player.scores
         : [];
@@ -58,7 +62,7 @@ function displayProfile() {
     document.getElementById("games-played").textContent =
         (player.gamesPlayed ?? scores.length).toString();
 
-    // Calculate leaderboard rank from saved users
+    // Leaderboard rank
     const rankedPlayers = [...users].sort(
         (a, b) => (b.highScore || 0) - (a.highScore || 0)
     );
@@ -67,32 +71,40 @@ function displayProfile() {
         user => user.id === player.id
     );
 
-    document.getElementById("playerRank").textContent =
+    document.getElementById("player-rank").textContent =
         player.highScore > 0
             ? `#${rank + 1}`
             : "Unranked";
 
-    //  Recent activity
-    document.getElementById("lastPlayed").textContent =
-        player.lastPlayed
+    // Recent activity
+    const lastPlayed = document.querySelector(".last-play");
+
+    if (lastPlayed) {
+        const activity = document.createElement("p");
+
+        activity.textContent = player.lastPlayed
             ? `Last played: ${player.lastPlayed}`
             : "No games played yet.";
 
-    //Achievements
-    const achievements = document.getElementById(
-        "playerAchievements"
-    );
+        lastPlayed.appendChild(activity);
+    }
 
-    achievements.replaceChildren();
+    // Achievements
+    const achievements = document.querySelector(".player-awards");
 
-    if (player.awards && player.awards.length > 0) {
-        player.awards.forEach(award => {
-            const item = document.createElement("p");
-            item.textContent = award;
-            achievements.appendChild(item);
-        });
-    } else {
-        achievements.textContent =
-            "Your achievements will appear here.";
+    if (achievements) {
+        if (player.awards && player.awards.length > 0) {
+            player.awards.forEach(award => {
+                const item = document.createElement("p");
+                item.textContent = award;
+                achievements.appendChild(item);
+            });
+        } else {
+            const message = document.createElement("p");
+            message.textContent =
+                "Your achievements will appear here.";
+
+            achievements.appendChild(message);
+        }
     }
 }
