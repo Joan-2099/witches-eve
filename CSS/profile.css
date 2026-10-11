@@ -1,0 +1,258 @@
+
+/* WITCHES' EVE — PROFILE PAGE*/
+
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@400;500;600;700;800&display=swap');
+
+:root {
+    --background: #10091f;
+    --card: #1c1230;
+    --card-light: #27183e;
+    --purple: #8932c3;
+    --purple-light: #bd83f5;
+    --white: #fbf8ff;
+    --muted: #b6a9c8;
+    --border: rgba(189, 131, 245, 0.2);
+    --green: #a9e8bd;
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    min-height: 100vh;
+    font-family: 'Manrope', 'DM Sans', sans-serif;
+    color: var(--white);
+
+    background:
+        radial-gradient(
+            ellipse at 50% 0%,
+            rgba(137, 50, 195, 0.25),
+            transparent 55%
+        ),
+        var(--background);
+}
+
+/* MAIN CONTAINER */
+.profile-container {
+    width: min(1050px, 92%);
+    margin: 0 auto;
+    padding: 65px 0 80px;
+}
+
+/* PROFILE HEADER CARD */
+.profile-top {
+    position: relative;
+    display: flex;
+    align-items: center;
+    gap: 32px;
+    padding: 40px;
+    overflow: hidden;
+    background:
+        radial-gradient(
+            circle at 100% 0%,
+            rgba(137, 50, 195, 0.3),
+            transparent 45%
+        ),
+        linear-gradient(135deg, #211333, #191027);
+
+    border: 1px solid var(--border);
+    border-radius: 24px;
+    box-shadow: 0 20px 55px rgba(0, 0, 0, 0.25);
+}
+
+
+/* Profile pic */
+.profile-image {
+    flex-shrink: 0;
+    width: 145px;
+    height: 145px;
+    padding: 4px;
+    border-radius: 50%;
+    background: linear-gradient(135deg,var(--purple-light),var(--purple), #e8d7ff);
+    box-shadow: 0 0 30px rgba(137, 50, 195, 0.3);
+}
+
+.profile-image img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 50%;
+    border: 3px solid var(--card);
+    background: var(--card-light);
+}
+
+/* Player info*/
+
+.profile-info {
+    flex: 1;
+    min-width: 0;
+}
+
+.profile-info h1 {
+    margin-bottom: 10px;
+    font-size: clamp(2rem, 5vw, 2.8rem);
+    font-weight: 800;
+    letter-spacing: -1.5px;
+    overflow-wrap: anywhere;
+}
+
+.profile-info p {
+    margin-bottom: 9px;
+    color: var(--muted);
+    line-height: 1.7;
+    overflow-wrap: anywhere;
+}
+
+#profileBio {
+    margin-top: 12px;
+    color: #e3d2f8;
+}
+
+/* EDIT PROFILE BUTTON */
+
+#editProfileBtn {
+    margin-top: 13px;
+    padding: 12px 21px;
+    color: var(--white);
+    background: var(--purple);
+    border: 1px solid var(--purple);
+    border-radius: 10px;
+    font-family: inherit;
+    font-size: 0.92rem;
+    font-weight: 700;
+    cursor: pointer;
+    transition: background 0.2s ease,transform 0.2s ease,box-shadow 0.2s ease;
+}
+
+#editProfileBtn:hover {
+    background: #9b48d3;
+    transform: translateY(-2px);
+    box-shadow: 0 8px 22px rgba(137, 50, 195, 0.3);
+}
+
+#editProfileBtn:focus-visible {
+    outline: 2px solid var(--purple-light);
+    outline-offset: 4px;
+}
+
+/* PLAYER STAT GRID */
+
+.player-stats {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 18px;
+    margin-top: 25px;
+}
+
+/* INDIVIDUAL STAT CARDS */
+
+.stats {
+    position: relative;
+    min-width: 0;
+    padding: 26px 24px;
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-radius: 18px;
+    transition: transform 0.2s ease,border-color 0.2s ease,background 0.2s ease;
+}
+
+.stats:hover {
+    transform: translateY(-4px);
+    border-color: rgba(189, 131, 245, 0.6);
+    background: var(--card-light);
+}
+
+/* Small decorative accent */
+.stats::before {
+    content: "";
+    display: block;
+    width: 35px;
+    height: 4px;
+    margin-bottom: 22px;
+    background: linear-gradient(
+        90deg,
+        var(--purple),
+        var(--purple-light)
+    );
+
+    border-radius: 20px;
+}
+
+.stat-title {
+    margin-bottom: 12px;
+    color: var(--muted);
+    font-size: 0.9rem;
+    font-weight: 600;
+}
+
+.metric {
+    display: block;
+    color: var(--white);
+
+    font-size: clamp(1.7rem, 3vw, 2.25rem);
+    font-weight: 800;
+    letter-spacing: -1px;
+
+    overflow-wrap: anywhere;
+}
+
+/* LAST PLAYED + AWARDS */
+
+.last-play,
+.player-awards {
+    grid-column: 1 / -1;
+    min-width: 0;
+    padding: 27px;
+
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-radius: 18px;
+}
+
+.last-play {
+    margin-top: 8px;
+}
+
+.last-play::before {
+    content: "YOUR JOURNEY";
+    display: block;
+    margin-bottom: 14px;
+
+    color: var(--purple-light);
+    font-size: 0.75rem;
+    font-weight: 800;
+    letter-spacing: 2px;
+}
+
+.player-awards::before {
+    content: "ACHIEVEMENTS";
+    display: block;
+    margin-bottom: 17px;
+    color: var(--purple-light);
+    font-size: 0.75rem;
+    font-weight: 800;
+    letter-spacing: 2px;
+}
+
+/* Content inserted into these sections by JavaScript */
+
+.last-play p,
+.player-awards p {
+    color: var(--muted);
+    line-height: 1.8;
+}
+
+.player-awards p {
+    margin-top: 10px;
+    padding: 13px 16px;
+
+    color: var(--white);
+    background: var(--card-light);
+    border: 1px solid var(--border);
+    border-radius: 10px;
+}
+

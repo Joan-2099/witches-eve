@@ -4,28 +4,174 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <link rel="stylesheet" href="../CSS/profile.css">
+    <link rel="stylesheet" href="../CSS/foot_nav.css">
 </head>
 <body>
+    <div class="navclass">
+        <nav class="navbar">
+            <ul>
+                <li> <a href="index.html">Home</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="rankings.html">Rankings</a></li>
+                
+            </ul>      
+        </nav>
+        <div class="login_reg">
+            <a href="login.html" id="profileLink" aria-label="View your profile">
+                <i class="fa-solid fa-user"></i>
+            </a>
+        </div>
+        <nav class="navbar">
+            <ul>
+                <li><a href="login.html" id="logoutLink">Logout</a></li>
+            </ul>
+        </nav>
+    </div>
 
     <main>
         <div class="profile-container">
-
             <div class="profile-top">
                 <div class="profile-image">
-
+                    <img id="profilePicture" src="../images/default-avatar.png" alt="Profile picture">
                 </div>
 
                 <div class="profile-info">
+                    <h1 id="profileUsername">Player</h1>
+                    <p id="profileEmail"></p>
+                    <p id="profileBio"></p>
 
+                    <button type="button" id="editProfileBtn">
+                        Edit Profile
+                    </button>
                 </div>
+
             </div>
 
             <div class="player-stats">
+                <div class="stats">
+                    <p class="stat-title">Best score</p>
+                    <span class="metric" id="best-score">
+
+                    </span>
+                </div>
+
+                <div class="stats">
+                     <p class="stat-title">Games Played</p>
+                    <span class="metric" id="games-played">
+
+                    </span>
+
+                </div>
+            
+                <div class="stats">
+                     <p class="stat-title">Player Rank</p>
+                    <span class="metric" id="player-rank">
+
+                    </span>
+                </div>
+
+                <div class="last-play">
+
+                </div>
+
+                <div class="player-awards">
+
+                </div>
+
+            </div>
+         
+        </div>
+    </main>
+
+    <footer>
+
+        <div class="footer-main-grid">
+            <!-- BRAND -->
+            <div class="footer-brand">
+                <a href="" class="footer-logo">
+                    
+                </a>
+            </div>
+
+
+            <!-- NAV -->
+            <div class="footer-column">
+
+                <span class="footer-column-label">Explore</span>
+                <nav class="footer-nav">
+                    <a href="">Home</a>
+                    <a href="">About us</a>
+                    <a href="login.html">
+                        Login
+                    </a>
+                </nav>
 
             </div>
 
-            
+
+            <!-- CONTACT -->
+            <div class="footer-column footer-contact">
+                <span class="footer-column-label">
+                    Get in touch
+                </span>
+
+                <p>+230 5800000</p>
+                <p>@info.witcheseve.com</p>
+
+                <div class="footer-address">
+                    <i class="fa-solid fa-location-dot"></i>
+                    <span>
+                        Dodo mall,<br>
+                        Coastal Road,<br>
+                        Flic en Flac, Mauritius
+                    </span>
+                </div>
+            </div>
+
+
+            <!--SOCIAL -->
+            <div class="footer-column footer-last">
+
+                <div class="footer-social-heading">
+                        Follow Witches' Eve
+                </div>
+
+                <div class="footer-socials">
+                    <a href="#" aria-label="Tiktok">
+                        <i class="fa-brands fa-tiktok"></i>
+                    </a>
+
+                    <a href="#" aria-label="Instagram">
+                        <i class="fa-brands fa-instagram"></i>
+                    </a>
+
+                    <a href="#" aria-label="X">
+                        <i class="fa-brands fa-square-x-twitter"></i>
+                    </a>
+                </div>
+
+            </div>
+
         </div>
-    </main>
+
+        <!--GIANT TITLE-->
+        <section class="footer-title">
+            <div class="footer-title-word">
+                WITCHES' EVE
+            </div>
+        </section>
+
+
+        <!-- BOTTOM BAR -->
+        <div class="footer-bottom">
+            <span>
+                © 2026 Witches' Eve. All rights reserved.
+            </span>
+        </div>
+
+    </footer>
+
+    <script type="module" src="../JS/profile.js"></script>
 </body>
 </html>
