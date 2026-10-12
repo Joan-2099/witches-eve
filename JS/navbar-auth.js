@@ -2,26 +2,58 @@ import { getCurrentUser, logoutUser } from "./auth.js";
 
 const profileLink = document.getElementById("profileLink");
 const logoutLink = document.getElementById("logoutLink");
+const logoutModal = document.getElementById("logoutModal");
+const cancelLogout = document.getElementById("cancelLogout");
+const confirmLogout = document.getElementById("confirmLogout");
+const logoutBackdrop = document.querySelector(".logout-backdrop");
 
-const currentUser = getCurrentUser();
 
-// Choose the correct destination for the profile icon
-if (profileLink) {
-    profileLink.href = currentUser ? "profile.html" : "login.html";
-}
+function updateNavbar() {
+    const loggedIn = Boolean(getCurrentUser());
 
-// Handle logout
-if (logoutLink) {
-    if (currentUser) {
-        logoutLink.textContent = "Logout";
+    if (profileLink) {
+        profileLink.href = loggedIn ? "profile.html" : "login.html";
+    }
 
-        logoutLink.addEventListener("click", function (event) {
-            event.preventDefault();
-            logoutUser();
-            window.location.href = "login.html";
-        });
-    } else {
-        logoutLink.textContent = "Login";
-        logoutLink.href = "login.html";
+    if (logoutLink) {
+        logoutLink.hidden = false;
+        logoutLink.style.display = "inline-block";
     }
 }
+
+updateNavbar();
+
+
+function closeLogoutModal() {
+    logoutModal.hidden = true;
+    logoutLink.focus();
+}
+
+if (logoutLink && logoutModal) {
+    logoutLink.addEventListener("click", (event) => {
+        event.preventDefault();
+
+        if (!getCurrentUser()) {
+            window.location.href = "login.html";
+            return;
+        }
+
+        logoutModal.hidden = false;
+        confirmLogout.focus();
+    });
+
+    cancelLogout.addEventListener("click", closeLogoutModal);
+    logoutBackdrop.addEventListener("click", closeLogoutModal);
+
+    confirmLogout.addEventListener("click", () => {
+        logoutUser();
+        window.location.href = "login.html";
+    });
+
+    document.addEventListener("keydown", (event) => {
+        if (event.key === "Escape" && !logoutModal.hidden) {
+            closeLogoutModal();
+        }
+    });
+}
+

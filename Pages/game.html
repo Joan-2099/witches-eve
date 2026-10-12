@@ -5,33 +5,123 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <link rel="stylesheet" href="../CSS/foot_nav.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
 </head>
 <body>
-     <div class="navclass">
-            <nav class="navbar">
-                <ul>
-                    <li> <a href="index.html">Home</a></li>
-                    <li><a href="about.html">About</a></li>
-                    <li><a href="rankings.html">Rankings</a></li>
-                
-                </ul>      
-            </nav>
-            <div class="login_reg">
-                <a href="login.html" id="profileLink" aria-label="View your profile">
-                    <i class="fa-solid fa-user"></i>
-                </a>
-            </div>
-            <nav class="navbar">
-                <ul>
-                    <li><a href="login.html" id="logoutLink">Logout</a></li>
-                </ul>
-            </nav>
+    <div class="navclass">
+        <nav class="navbar">
+            <ul>
+                <li> <a href="index.html">Home</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="rankings.html">Rankings</a></li> 
+            </ul>      
+        </nav>
+        <div class="login_reg">
+            <a href="login.html" id="profileLink" aria-label="View your profile">
+                <i class="fa-solid fa-user"></i>
+            </a>
         </div>
+
+        <nav class="navbar">
+            <ul>
+                <li><a href="#" id="logoutLink">Logout</a></li>
+            </ul>
+        </nav>
+    </div>
+
+    <div id="logoutModal" class="logout-modal" hidden>
+        <div class="logout-backdrop"></div>
+        <div class="logout-dialog" role="dialog" aria-modal="true"
+            aria-labelledby="logoutTitle">
+            <h2 id="logoutTitle">Leaving so soon?</h2>
+            <p>Are you sure you want to log out of Witches' Eve?</p>
+
+            <div class="logout-actions">
+                <button type="button" id="cancelLogout">Cancel</button>
+                <button type="button" id="confirmLogout">Yes, log out</button>
+            </div>
+        </div>
+    </div>
 
     <main>
 
 
     </main>
-    
+    <footer class="witch-footer">
+
+        <div class="footer-inner">
+
+            <!-- TOP: BRAND + LITTLE INTRO -->
+            <div class="footer-top">
+
+                <div class="footer-intro">
+                    <h2>THE NIGHT<br>IS YOURS<span>!</span></h2>
+                    <p>
+                        Grab your broom, trust nobody, and try to survive
+                        Witches' Eve. See you after dark.
+                    </p>
+                </div>
+
+                <div class="footer-decoration">
+                    <img src="../images/logo%20silver.png"
+                        alt="Witches' Eve logo"
+                        class="footer-logo">
+                </div>
+
+            </div>
+
+
+            <!-- MIDDLE: LINKS -->
+            <div class="footer-middle">
+
+                <a href="index.html" class="footer-brand-name">
+                    <span class="brand-icon">✳</span>
+                    Witches'<span>Eve</span>
+                </a>
+
+                <nav class="footer-links" aria-label="Footer navigation">
+                    <a href="index.html">Home</a>
+                    <a href="about.html">About</a>
+                    <a href="rankings.html">Leaderboard</a>
+                    <a href="login.html">Sign in</a>
+                </nav>
+
+                <div class="footer-socials">
+                    <a href="#" aria-label="TikTok">
+                        <i class="fa-brands fa-tiktok"></i>
+                    </a>
+
+                    <a href="#" aria-label="Instagram">
+                        <i class="fa-brands fa-instagram"></i>
+                    </a>
+
+                    <a href="#" aria-label="X">
+                        <i class="fa-brands fa-x-twitter"></i>
+                    </a>
+                </div>
+
+            </div>
+
+
+            <!-- BOTTOM: LOCATION + COPYRIGHT -->
+            <div class="footer-bottom">
+                <div class="footer-location">
+                    <i class="fa-solid fa-location-dot"></i>
+                    <span>Flic en Flac, Mauritius</span>
+                </div>
+
+                <p>Made for the brave. And the slightly foolish.</p>
+
+                <span class="footer-copyright">
+                    © 2026 Witches' Eve
+                </span>
+            </div>
+
+        </div>
+
+    </footer>
+
+
+    <script type="module" src="../JS/navbar-auth.js"></script>
 </body>
 </html>

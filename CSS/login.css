@@ -1,233 +1,310 @@
-*{
+
+/* ==================================
+   DODGE THE WITCH — HALLOWEEN ARCADE
+   ================================== */
+
+:root {
+    --night: #19142B;
+    --night-light: #29213F;
+    --purple: #7350A1;
+    --lavender: #C9B5E8;
+    --pumpkin: #F28C38;
+    --pumpkin-hover: #FFAA55;
+    --cream: #FFF3E0;
+    --muted: #B9ADC9;
+    --green: #91A878;
+}
+
+/* Reset */
+
+* {
     margin: 0;
     padding: 0;
+    box-sizing: border-box;
     text-decoration: none;
     list-style: none;
-    box-sizing: border-box;
 }
-body{
+
+body {
     min-height: 100vh;
     display: flex;
     flex-direction: column;
-    background-color: rgb(40, 15, 97);
 
+    background-color: #FFF3E0;
+    color: var(--cream);
+
+    font-family: Arial, sans-serif;
 }
-main{
+
+/* Main layout */
+
+main {
     flex: 1;
     display: flex;
-    flex-direction: column;
     justify-content: center;
     align-items: center;
+    padding: 30px 16px;
 }
 
-.wrapper{
+/* Centred game card */
+
+.wrapper {
     position: relative;
     display: flex;
     flex-direction: column;
-    background-color: rgb(249, 249, 249);
-    border-radius: 20px;
-    width: 850px;
-    height: 650px;
     justify-content: center;
-    margin: 20px;
-    box-shadow: 0 0 30px black;
-    overflow: hidden;
+
+    width: 440px;
+    max-width: 100%;
+    min-height: 480px;
+    height: auto;
+    margin: 20px auto;
+    padding: 12px;
+
+    background: var(--night-light);
+    border: 1px solid #49385F;
+    border-radius: 18px;
+
+    box-shadow: 0 15px 45px rgba(0, 0, 0, 0.4);
 }
 
-.wrapper h1{
-    font-size:35px ;
-    text-align: center;
-    color: rgb(24, 26, 27);
-    margin-top: -10px 0;
-}
+/* Forms */
 
-.wrapper p{
-    font-size: 14.5px;
-    margin: 15px 0;
-}
+.form-box {
+    display: none;
+    position: relative;
 
-form{
     width: 100%;
-    max-width: 320px;
-    margin: 0 auto;
+    height: auto;
+    padding: 30px 24px;
+
+    background: transparent;
+    color: var(--cream);
+    text-align: center;
 }
 
-.form-box{
+/* Show login by default */
+
+.wrapper:not(.active) .form-box.login {
     display: flex;
-    align-items: center;
+    flex-direction: column;
     justify-content: center;
-    color: rgb(65, 11, 107);
-    padding: 30px 50px;
-    text-align: center;
-    position: absolute;
-    z-index: 1;
-    right: 0;
-    width: 50%;
-    height: 100%;
-    background: white;
-    transition: right 0.5s ease-in-out 1.2s;
 }
 
-.form-box form{
+/* Show registration when active */
+
+.wrapper.active .form-box.register {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.form-box form {
     width: 100%;
-    max-width: 320px;
+    max-width: 340px;
+    margin: 0 auto;
 }
 
 .form-box h1 {
-    margin-bottom: 20px;
+    margin: 0 0 10px;
+    color: var(--cream);
+    font-size: 30px;
+    letter-spacing: 0.5px;
 }
 
-.form-box.login{
-    right: 0;
-}
-
-.form-box.register{
-    right: -50%;
-}
-
-.wrapper.active .form-box.login{
-    right: -50%;
-}
-
-.wrapper.active .form-box.register{
-    right: 50%;
-}
-.entry{
-    position: relative;
+.wrapper p {
     margin: 12px 0;
-    width: 100%;
+    color: var(--muted);
+    font-size: 14px;
+    line-height: 1.6;
 }
 
-.entry input{
+/* Inputs */
+
+.entry {
+    position: relative;
     width: 100%;
-    height: 45px;
-    border-radius: 10px;
-    padding: 10px 45px 10px 20px;
-    background-color: rgb(239, 210, 245);
-    border: none;
+    margin: 16px 0;
+}
+
+.entry input {
+    width: 100%;
+    height: 46px;
+    padding: 10px 44px 10px 15px;
+
+    background: #352B49;
+    border: 1px solid #504163;
+    border-radius: 9px;
+
+    color: var(--cream);
+    font-family: inherit;
+    font-size: 14px;
+
     outline: none;
-    color: black;
-
+    transition: border-color 0.2s, box-shadow 0.2s;
 }
 
-.entry input::placeholder{
-    color: rgb(167, 143, 192);
-    font-weight: 400;
+.entry input::placeholder {
+    color: #B5A8C8;
 }
 
-.entry i{
+.entry input:focus {
+    border-color: var(--lavender);
+    box-shadow: 0 0 0 3px rgba(201, 181, 232, 0.12);
+}
+
+.entry i {
     position: absolute;
-    right: 20px;
     top: 50%;
+    right: 15px;
     transform: translateY(-50%);
-    font-size: 20px;
-}
 
-.forgot_pass{
-    margin: -15px 0 15px;
-}
-
-.forgot_pass a{
-    font-size: 14.5px;
-    color: rgb(18, 16, 16);
-}
-
-.logbtn, .regbtn{
-    display: flex;
-    padding: 10px;
-    border-radius: 15px;
-    transition: transform 0.2s ease;
-    width: 140px;
-    justify-content: center;
-    margin: 0 auto;
-    cursor: pointer;
-    border:none;
-    outline: none;
-}
-
-.logbtn:hover, .regbtn:hover{
-    transform: translateY(-5px);
-    background-color: rgb(192, 169, 245);
-    color: white;
-}
-
-
-.toggle-box{
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    z-index: 2;
+    color: var(--lavender);
+    font-size: 18px;
     pointer-events: none;
 }
 
-.toggle-box::before{
-    content: '';
-    position: absolute;
-    left: -250%;
-    width: 300%;
-    height: 100%;
-    background-color: rgb(193, 90, 234);
-    border-radius: 150px;
-    transition: 1.8s ease-in-out;
+/* Forgot password */
+
+.forgot_pass {
+    margin: 0 0 20px;
+    text-align: right;
 }
 
-.wrapper.active .toggle-box::before{
-    left: 50%;
+.forgot_pass a {
+    color: var(--lavender);
+    font-size: 13px;
 }
-.toggle-panel{
+
+.forgot_pass a:hover {
+    color: var(--pumpkin-hover);
+}
+
+/* Main buttons */
+
+.logbtn,
+.regbtn {
     display: flex;
-    position: absolute;
-    width: 50%;
-    height: 100%;
-    color: azure;
-    flex-direction: column;
     justify-content: center;
     align-items: center;
-    transition: 0.6s ease-in-out;
+    width: 100%;
+    min-height: 45px;
+    margin: 18px auto 0;
+    padding: 10px 16px;
+    background: var(--pumpkin);
+    color: #24162A;
+    border: none;
+    border-radius: 9px;
+    font-family: inherit;
+    font-size: 15px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background 0.2s, transform 0.2s;
+}
+
+.logbtn:hover,
+.regbtn:hover {
+    background: var(--pumpkin-hover);
+    transform: translateY(-2px);
+}
+
+/* Login/register switch area */
+
+.toggle-box {
+    position: relative;
+    width: 100%;
+    height: auto;
+    z-index: 3;
     pointer-events: auto;
 }
-.toggle-panel.toggle-left{
-    left: 0;
-    transition-delay: 1.2s;
-}
-.toggle-panel.toggle-right{
-    right: -50%;
-    transition-delay: 0.6s;
+
+.toggle-box::before {
+    display: none;
 }
 
-.wrapper.active .toggle-panel.toggle-left{
-    left: -50%;
-    transition-delay: 0.6s;
+.toggle-panel {
+    display: none;
+    position: relative;
+
+    width: 100%;
+    height: auto;
+    padding: 12px 18px 22px;
+
+    color: var(--cream);
+    text-align: center;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+
+    pointer-events: auto;
+    transition: none;
 }
 
-.wrapper.active .toggle-panel.toggle-right{
-    right: 0;
-    transition-delay: 1.2s;
+/* Default: show the login screen's switch */
+
+.wrapper:not(.active) .toggle-panel.toggle-left {
+    display: flex;
 }
 
-.toggle-panel p{
-    margin-bottom: 20px;
+/* Registration screen's switch */
+
+.wrapper.active .toggle-panel.toggle-right {
+    display: flex;
 }
 
-.btn{
-    width: 160px;
-    height: 46px;
+.toggle-panel h1 {
+    color: var(--cream);
+    font-size: 23px;
+}
+
+.toggle-panel p {
+    margin: 5px 0 12px;
+    color: var(--muted);
+}
+
+/* Secondary switch buttons */
+
+.btn {
+    width: auto;
+    min-width: 130px;
+    min-height: 38px;
+    padding: 8px 18px;
+
     background: transparent;
-    border: 2px solid #fff;
-    box-shadow: none;
-    color: #fff;
+    color: var(--lavender);
+
+    border: 1px solid var(--purple);
+    border-radius: 8px;
+
+    font-family: inherit;
+    font-size: 13px;
+    font-weight: bold;
+
+    cursor: pointer;
+    transition: background 0.2s, color 0.2s;
 }
 
-.btn:hover{
-    color: black;
-    background-color: #fff;
+.btn:hover {
+    background: #A6BA91;
+    color: white;
 }
+
+/* Form feedback */
 
 #login-message,
 #register-message {
     min-height: 1.4em;
     margin: 10px 0;
-    font-size: 0.9rem;
+    font-size: 13px;
     text-align: center;
     overflow-wrap: anywhere;
+}
+
+/* Keyboard focus */
+
+button:focus-visible,
+a:focus-visible,
+input:focus-visible {
+    outline: 2px solid var(--pumpkin);
+    outline-offset: 3px;
 }
